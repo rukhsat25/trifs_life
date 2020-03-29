@@ -1,0 +1,22 @@
+package Digits;
+import java.io.*;
+public class digits_first_last
+{
+    public static void main()throws IOException
+    {
+        InputStreamReader isr= new InputStreamReader(System.in);
+        BufferedReader in=new BufferedReader(isr);
+        int t=0,x,n,a,s=0;
+        System.out.println("Enter The Number To Find The Sum Of First And Last Digit");
+        n=Integer.parseInt(in.readLine());
+        x=n%10;
+        while(n!=0)
+        {
+            a=n%10;
+            s=(s*10)+a;
+            n=n/10;
+            t=s%10;
+        }
+        System.out.println("Sum Of First And Last Digit Is "+(t+x));
+        }
+    }
