@@ -1,0 +1,651 @@
+public class Computer_Cricket
+{
+    public static void main()throws IOException
+    {
+        InputStreamReader isr= new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(isr);
+        String name;
+        int a,b,i,cheat,s1,s2,c,choice,ifn=1,toss,team;
+        double r,o;
+        while(ifn>0)
+        {
+            a=0;i=0;b=0;r=0;cheat=0;s1=0;s2=0;c=0;choice=0;ifn=1;name="";
+            System.out.println("===========================================================");
+            System.out.println("Welcome To The Game");
+            System.out.println("Enter Your Name");
+            name=br.readLine();
+            System.out.println("===========================================================");
+            System.out.println("===========================================================");
+            System.out.println("Enter 1 for Heads");
+            System.out.println("Enter 2 for Tails");
+            System.out.print("Choose The Toss    ");
+            toss=Integer.parseInt(br.readLine());
+            o=(Math.random()*10);
+            o=o+1;
+            System.out.println("===========================================================");
+            if(((toss==1)&&(o<=5)) || ((toss==2)&&(o>5)))
+            {
+                System.out.println("You Won The Toss.");
+                System.out.println("Press 1 For Batting.");
+                System.out.println("Press 2 For Bowling");        
+                team=Integer.parseInt(br.readLine());
+                System.out.println("===========================================================");
+                if(team==1)
+                {
+                    System.out.println("Get Ready......You Are Batting First");
+                    for(i=1;i>0;i++)
+                    {
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(b==a)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("===========================================================");
+                            System.out.println("HOWZATTT!!!!!!!");
+                            System.out.println("Your Final Score Is "+s1);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s1=s1+b;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        System.out.println("You Are Currently Batting At "+s1);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(c=0;c<1;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.println("===========================================================");
+                        System.out.println("===========================================================");
+                        System.out.println("Get Ready To Bowl");
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("===========================================================");
+                            System.out.println("Computer Is Bold");
+                            System.out.println("Computer's Final Score Is "+s2);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s2=s2+a;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            for(c=0;c<=0;c++)
+                            {
+                                System.out.println("==========================================================");
+                            }
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        if(s2>s1)
+                        {
+                            System.out.println("===========================================================");
+                            break;
+                        }
+                        System.out.println("Computer Current Score="+s2);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Computer Final Score="+s2);
+                    System.out.println("Your Final Score="+s1);
+                    if(s1>s2)
+                    {
+                        System.out.println("Congratulations!!!! "+name+" You Have Beaten The Almighty Computer");
+                    }
+                    else if(s2>s1)
+                    {
+                        System.out.println("Oooops...Computer Won....Better Luck Next Time");
+                    }
+                    else
+                    {
+                        System.out.println("Woooah!!!! What An Amazing Match We Had But It Results In A Tie");
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Enter 1 For Playing Again");
+                    System.out.println("Enter 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                    {
+                        System.out.println('\f');
+                    }
+                    else
+                    {
+                        System.out.println('\f');
+                        System.out.println("Nice To Play With You "+name+" ...See You Next Time");
+                        break;
+                    }
+                }
+                else if(team==2)
+                {
+                    System.out.println("===========================================================");
+                    System.out.println("===========================================================");
+                    System.out.println("Get Ready......You Are Bowling First");
+                    for(i=1;i>0;i++)
+                    {
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Computer Is Bold.");
+                            System.out.println("Computer's Final Score Is "+s1);
+                            break;
+                        }
+                        else if(a>0 && a<=6)
+                        {
+                            s1=s1+a;
+                        }
+                        System.out.println("Computer Is Currently Batting At "+s1);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(c=0;c<1;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.println("===========================================================");
+                        System.out.println("===========================================================");
+                        System.out.println("Get Ready To Bat");
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Howzatttt!!!!!!");
+                            System.out.println("Your's Final Score Is "+s2);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s2=s2+b;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        if(s2>s1)
+                        {
+                            break;
+                        }
+                        System.out.println("Your's Current Score="+s2);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("===========================================================");
+                    System.out.println("Computer Final Score="+s1);
+                    System.out.println("Your Final Score="+s2);
+                    if(s1<s2)
+                    {
+                        System.out.println("Congratulations!!!! "+name+" You Have Beaten The Almighty Computer");
+                    }
+                    else if(s2<s1)
+                    {
+                        System.out.println("Oooops...Computer Won....Better Luck Next Time");
+                    }
+                    else
+                    {
+                        System.out.println("Woooah!!!! What An Amazing Match We Had. But It Results In A Tie");
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Enter 1 For Playing Again");
+                    System.out.println("Enter 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                    {
+                        System.out.println('\f');
+                    }
+                    else
+                    {
+                        System.out.println('\f');
+                        System.out.println("Nice To Play With You "+name+" ...See You Next Time");
+                        break;
+                    }
+                }
+                else
+                {
+                    System.out.println("Wrong Input");
+                }
+            }
+            else
+            {
+                System.out.println("Computer Won The Toss");
+                o=((Math.random())*10);
+                o=o+1;
+                if(o<=5)
+                {
+                    System.out.println("Computer Chooses To Bat First");
+                    System.out.println("===========================================================");
+                    for(i=1;i>0;i++)
+                    {
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Computer Is Bold.");
+                            System.out.println("Computer's Final Score Is "+s1);
+                            break;
+                        }
+                        else if(a>0 && a<=6)
+                        {
+                            s1=s1+a;
+                        }
+                        System.out.println("Computer Is Currently Batting At "+s1);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(c=0;c<1;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.println("===========================================================");
+                        System.out.println("===========================================================");
+                        System.out.println("Get Ready To Bat");
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Howzatttt!!!!!!");
+                            System.out.println("Your's Final Score Is "+s2);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s2=s2+b;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        if(s2>s1)
+                        {
+                            break;
+                        }
+                        System.out.println("Your's Current Score="+s2);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("===========================================================");
+                    System.out.println("Computer Final Score="+s1);
+                    System.out.println("Your Final Score="+s2);
+                    if(s1<s2)
+                    {
+                        System.out.println("Congratulations!!!! "+name+" You Have Beaten The Almighty Computer");
+                    }
+                    else if(s2<s1)
+                    {
+                        System.out.println("Oooops...Computer Won....Better Luck Next Time");
+                    }
+                    else
+                    {
+                        System.out.println("Woooah!!!! What An Amazing Match We Had. But It Results In A Tie");
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Enter 1 For Playing Again");
+                    System.out.println("Enter 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                    {
+                        System.out.println('\f');
+                    }
+                    else
+                    {
+                        System.out.println('\f');
+                        System.out.println("Nice To Play With You "+name+" ...See You Next Time");
+                        break;
+                    }
+                }
+                else
+                {
+                    System.out.println("Computer Chooses To Bowl First");
+                    for(i=1;i>0;i++)
+                    {
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(b==a)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("===========================================================");
+                            System.out.println("HOWZATTT!!!!!!!");
+                            System.out.println("Your Final Score Is "+s1);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s1=s1+b;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        System.out.println("You Are Currently Batting At "+s1);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(c=0;c<1;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.println("===========================================================");
+                        System.out.println("===========================================================");
+                        System.out.println("Get Ready To Bowl");
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                        System.out.print("Enter Your Number  ");
+                        b=Integer.parseInt(br.readLine());
+                        r=((Math.random())*10);
+                        r=r+1;
+                        a=(int)r;
+                        while(a>6)
+                        {
+                            r=((Math.random())*10);
+                            r=r+1;
+                            a=(int)r;
+                        }
+                        System.out.println("Computer's Number Is "+a);
+                        System.out.println();
+                        if(a==b)
+                        {
+                            System.out.println("===========================================================");
+                            System.out.println("===========================================================");
+                            System.out.println("Computer Is Bold");
+                            System.out.println("Computer's Final Score Is "+s2);
+                            break;
+                        }
+                        else if(b>0 && b<=6)
+                        {
+                            s2=s2+a;
+                        }
+                        else if(b>6 || b<=0)
+                        {
+                            for(c=0;c<=0;c++)
+                            {
+                                System.out.println("==========================================================");
+                            }
+                            System.out.println("Yoy Have Tried To Cheat");
+                            System.out.println("Game Over");
+                            cheat++;
+                            break;
+                        }
+                        if(s2>s1)
+                        {
+                            System.out.println("===========================================================");
+                            break;
+                        }
+                        System.out.println("Computer Current Score="+s2);
+                    }
+                    for(c=0;c<=2;c++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    for(i=1;i>0;i++)
+                    {
+                        if(cheat>0)
+                        {
+                            break;
+                        }
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Computer Final Score="+s2);
+                    System.out.println("Your Final Score="+s1);
+                    if(s1>s2)
+                    {
+                        System.out.println("Congratulations!!!! "+name+" You Have Beaten The Almighty Computer");
+                    }
+                    else if(s2>s1)
+                    {
+                        System.out.println("Oooops...Computer Won....Better Luck Next Time");
+                    }
+                    else
+                    {
+                        System.out.println("Woooah!!!! What An Amazing Match We Had But It Results In A Tie");
+                    }
+                    System.out.println("===========================================================");
+                    System.out.println("Enter 1 For Playing Again");
+                    System.out.println("Enter 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                    {
+                        System.out.println('\f');
+                    }
+                    else
+                    {
+                        System.out.println('\f');
+                        System.out.println("Nice To Play With You "+name+" ...See You Next Time");
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
