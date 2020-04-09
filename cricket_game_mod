@@ -1,0 +1,170 @@
+import java.io.*;
+public class Cricket_short
+{
+    void main()throws IOException
+    {
+        InputStreamReader isr= new InputStreamReader(System.in); BufferedReader br=new BufferedReader(isr);
+        String name; int a,b,i,cheat,s1,s2,c,choice,toss,team; double o;
+        while(1>0)
+        {
+            System.out.println("Welcome To The Game\nEnter Your Name");
+            name=br.readLine();
+            System.out.println("Enter 1 for Heads \nEnter 2 for Tails\nChoose The Toss    ");
+            toss=Integer.parseInt(br.readLine());
+            o=(Math.random()*10)+1;
+            if(((toss==1)&&(o<=5)) || ((toss==2)&&(o>5)))
+            {
+                System.out.println("You Won The Toss.\nPress 1 For Batting.\nPress 2 For Bowling.");        
+                team=Integer.parseInt(br.readLine());
+                if(team==1)
+                {
+                    s1=batting(1000);
+                    s2=bowling(s1);
+                    System.out.println("Computer Final Score= "+s2+"\nYour Final Score= "+s1);
+                    result(s1,s2);
+                    System.out.println("Enter 1 For Playing Again and 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                        System.out.println('\f');
+                    else
+                    {
+                        System.out.println('\f');System.out.println("Nice To Play With You "+name+" ...See You Next Time");break;
+                    }
+                }
+                else if(team==2)
+                {
+                    s2=bowling(1000);
+                    s1=batting(s2);
+                    System.out.println("Computer Final Score="+s2);
+                    System.out.println("Your Final Score="+s1);
+                    result(s1,s2);
+                    System.out.println("Enter 1 For Playing Again and 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                        System.out.println('\f');
+                    else
+                    {
+                        System.out.println('\f');System.out.println("Nice To Play With You "+name+" ...See You Next Time");break;
+                    }
+                }
+                else
+                    System.out.println("Wrong Input");
+            }
+            else
+            {
+                System.out.println("Computer Won The Toss");
+                o=((Math.random())*10)+1;
+                if(o<=5)
+                {
+                    System.out.println("Computer Chooses To Bat First");
+                    s2=bowling(1000);
+                    System.out.println("You Need "+s2+" Runs To Win");
+                    s1=batting(s2);
+                    System.out.println("Computer Final Score = "+s2+"\nYour Final Score = "+s1);
+                    result(s1,s2);
+                    System.out.println("Enter 1 For Playing Again and 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                        System.out.println('\f');
+                    else
+                    {
+                        System.out.println('\f');System.out.println("Nice To Play With You "+name+" ...See You Next Time");break;
+                    }
+                }
+                else
+                {
+                    System.out.println("Computer Chooses To Bowl First");
+                    s1=batting(1000);
+                    System.out.println("You Need To Defend "+s1+" Runs To Win");
+                    s2=bowling(s1);
+                    System.out.println("Computer Final Score="+s2);
+                    System.out.println("Your Final Score="+s1);
+                    result(s1,s2);
+                    System.out.println("Enter 1 For Playing Again and 0 For Exit");
+                    choice=Integer.parseInt(br.readLine());
+                    if(choice==1)
+                        System.out.println('\f');
+                    else
+                    {
+                        System.out.println('\f');System.out.println("Nice To Play With You "+name+" ...See You Next Time");break;
+                    }
+                }
+            }
+        }
+    }
+
+    int batting(int score)throws IOException
+    {
+        InputStreamReader isr= new InputStreamReader(System.in); BufferedReader br=new BufferedReader(isr);
+        int i,a,b,c,cheat=0,s1=0,s2=score;
+        System.out.println("Get Ready......You Are Batting");
+        for(i=1;i>0;i++)
+        {
+            if(cheat>0)
+                break;
+            System.out.print("Enter Your Number  ");
+            b=Integer.parseInt(br.readLine());
+            a=(int)(((Math.random())*10)+1);
+            while(a>6)
+                a=(int)(((Math.random())*10)+1);
+            System.out.println("Computer's Number Is "+a);
+            if(b==a)
+            {
+                System.out.println("HOWZATTT!!!! Your Final Score Is "+s1);break;
+            }
+            else if(b>0 && b<=6)
+                s1=s1+b;
+            else if(b>6 || b<=0)
+            {
+                System.out.println("Yoy Have Tried To Cheat. Game Over");cheat=1;break;
+            }
+            if(s1>s2)
+                break;
+            System.out.println("You Are Currently Batting At "+s1);
+        }
+        return s1;
+    }
+
+    int bowling(int score)throws IOException
+    {
+        InputStreamReader isr= new InputStreamReader(System.in); BufferedReader br=new BufferedReader(isr);
+        int i,a,b,c,cheat=0,s1=score,s2=0;
+        System.out.println("Get Ready To Bowl");
+        for(i=1;i>0;i++)
+        {
+            if(cheat>0)
+                break;
+            System.out.print("Enter Your Number  ");
+            b=Integer.parseInt(br.readLine());
+            a=(int)(((Math.random())*10)+1);
+            while(a>6)
+                a=(int)(((Math.random())*10)+1);
+            System.out.println("Computer's Number Is "+a);
+            System.out.println();
+            if(a==b)
+            {
+                System.out.println("Computer Is Bold");System.out.println("Computer's Final Score Is "+s2);break;
+            }
+            else if(b>0 && b<=6)
+                s2=s2+a;
+            else if(b>6 || b<=0)
+            {
+                System.out.println("Yoy Have Tried To Cheat. Game Over");cheat=1;break;
+            }
+            if(s2>s1)
+                break;
+            System.out.println("Computer Current Score="+s2);
+        }
+        return s2;
+    }
+
+    void result(int s1,int s2)
+    {
+        if(s1>s2)
+            System.out.println("Congratulations!!!! You Have Beaten The Almighty Computer");
+        else if(s2>s1)
+            System.out.println("Oooops...Computer Won....Better Luck Next Time");
+        else
+            System.out.println("Woooah!!!! What An Amazing Match We Had But It Results In A Tie");
+    }
+}
