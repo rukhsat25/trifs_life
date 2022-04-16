@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="results.html" method="get" enctype="multipart/form-data">
+        <div>
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" placeholder="username" required>
+        </div>
+        <br>
+        <div>
+            <label for="email"> Email </label>
+            <input type="email" name="Email" id="email" required>
+        </div>
+        <br>
+        <div>
+            <label for="age"> Age </label>
+            <input type="number" name="age" id="age" min="0" max="100" step="1">
+        </div>
+        <br>
+        <div>
+            <label for="date"> Birthdate </label>
+            <input type="date" name="date" id="date" required>
+        </div>
+        <br>
+        <div>
+            <label> Password
+            <input type="password" name="password" required>
+            </label>
+        </div>
+        <br>
+        <div>
+            Favourite Food
+            <div>
+                <label for="banana"> Banana </label>
+                <input type="checkbox" name="banana" id="banana">
+            </div>
+            <div>
+                <label for="apple"> Apple </label>
+                <input type="checkbox" name="apple" id="apple" >
+            </div>
+        </div>
+        <div>
+            Gender
+            <div>
+                <label for="male"> Male </label>
+                <input type="radio" name="gender" id="male" value="male">
+            </div>
+            <div>
+                <label for="female"> Female </label>
+                <input type="radio" name="gender" id="female" value="female">
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="eyeColour"> Eye Colour </label>
+            <select name="eyeColour" id="eyeColour">
+                <option value="black"> Black </option>
+                <option label="Brown" value="brown"></option>
+                <option value="Blue"> Blue </option>
+                <option value="Green"> Green </option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="file"> Upload Resume </label>
+            <input type="file" name="file" id="file">
+        </div>
+        <br>
+        <div>
+            About Me
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Say Something About Yourself"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="phone"> Contact Information</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <br>
+        <div>
+            Nothing Here :)
+            <input type="hidden" name="hidden" value="secret message">
+        </div>
+        <div>
+        <button type="reset"> Reset </button>
+        <button type="submit"> Submit </button>
+        </div>
+    </form>
+</body>
+</html>
